@@ -1,0 +1,84 @@
+<html>
+    <head>
+
+        <title> Project 78 </title>
+
+    </head>
+
+    <body>
+
+        <h1 id="title"> Family Book </h1>
+        <div>
+        <img id="book" src="titlePage.jpg">
+        <br>
+        <span id="button-section">
+        <button type="button" onclick="back()"> Back </button>
+        <button type="button" onclick="next()"> Next </button>
+        </span>
+        <h2 class="text-success" id="caption"> Hello! </h3>
+
+    </body>
+
+    <style>
+
+        body {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #title {
+            margin-top: 50px;
+        }
+
+        #book {
+            border-width: 2px;
+            margin-left:2px;
+            border-style: solid;
+            width: 340px;
+        }
+
+        button {
+            margin-top: 5px;
+        }
+
+        #caption {
+            color: green;
+        }
+
+    </style>
+
+    <script>
+
+        var i = -1
+        var images = ["page1.jpg", "page2.jpg", "page3.jpg", "page4.jpg"];
+        var caption = ["09 April 2018", "08 November 2018", "16 February 2019", "13 October 2018"];
+
+        function next() {
+
+            i++
+            if (i > 3) {
+                i = 0;
+            }
+            var updated_image = images[i];
+            var updated_caption = caption[i];
+            document.getElementById("book").src= updated_image;
+            document.getElementById("caption").innerHTML= updated_caption;
+
+        }
+
+        function back() {
+
+            i--
+            if (i < 0) {
+                i = 3;
+            }
+            var updated_image = images[i];
+            var updated_caption = caption[i];
+            document.getElementById("book").src= updated_image;
+            document.getElementById("caption").innerHTML= updated_caption;
+
+}
+
+    </script>
+
+</html>
